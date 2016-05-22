@@ -10,6 +10,9 @@ html,body {
 	height: 100%;
 	font-size: 12px;
 }
+a {
+	text-decoration: none;
+}
 #content {
 	min-height: 90%;
 }

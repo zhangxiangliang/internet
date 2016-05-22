@@ -402,4 +402,44 @@ class BackgroundController extends CController{
         $this->render('success',array('message'=>'删除成功','url'=>'/background/CoursesList'));
         Yii::app()->end();
     }
+        // 课程信息
+    public function actionInfoCourse() {
+        //后台验证权限
+        $this->beforeValidate();
+
+         //获取课程
+        $course_id = $_GET['id'];
+        $course = Courses::getModelById($course_id);
+
+        // 获取教师信息
+        $teacher = Teacher::model()->findByPk($course->teacher_id);
+
+        $this->render('course_info',array(
+            'course' => $course,
+            'teacher' => $teacher
+        ));
+    }
+
+    /*
+     * 查询教师信息
+     */
+    public function actionInfoTeacher() {
+        // 权限验证
+        $this->beforeValidate();
+
+        // 获取教师信息
+        $teacher_id = $_GET['id'];
+        $teacher = Teacher::model()->findByPk($teacher_id);
+
+        // 获取教师的课程信息
+        $criteria = new CDbCriteria();
+        $criteria->compare('teacher_id',$teacher_id);
+        $courses = Courses::model()->findAll($criteria);
+
+        // 渲染
+        $this->render('teacher_info',array(
+            'teacher' => $teacher,
+            'courses' => $courses,
+        ));
+    }
 }
