@@ -42,6 +42,7 @@
 						<th>结束时间</th>
 						<th>上课地点</th>
 						<th>任课教师</th>
+                        <th>已选/限选人数</th>
 						<th>操作</th>
 					</tr>
                     <?php foreach($courses as $val){
@@ -56,6 +57,7 @@
 						<td><?php echo $val->endtime; ?> </td>
 						<td><?php echo $val->address; ?></td>
 						<td><?php echo $teacher ?></td>
+                        <td><?php echo $val->has_num.'/'.$val->num ?></td>
 						<td class="big-td">
 							<a href="/background/UpdateCourses?id=<?php echo $val->id;?>" class="btn blue small">修改</a>
                             <a href="/background/DelCourses?id=<?php echo $val->id;?>" class="btn red small">删除</a>

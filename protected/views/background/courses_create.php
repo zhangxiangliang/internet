@@ -92,6 +92,11 @@
                     <?php echo $form->textField($model,'job_number'); ?>
                     <?php echo $form->error($model,'job_number'); ?>
                 </div>
+                <div>
+                    <?php echo $form->labelEx($model,'限选人数'); ?>
+                    <?php echo $form->textField($model,'num'); ?>
+                    <?php echo $form->error($model,'num'); ?>
+                </div>
                 <div class="btns">
                     <?php echo CHtml::submitButton( '提交',$htmlOptions=array ('class'=>'btn blue')); ?>
                 </div>

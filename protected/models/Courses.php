@@ -6,6 +6,8 @@ class Courses extends CActiveRecord
     public $endtime;
     public $address;
     public $teacher_id;
+    public $num;
+    public $has_num;
 
     public $job_number;
 
@@ -17,7 +19,7 @@ class Courses extends CActiveRecord
     public function rules()
     {
         return array(
-            array('name,begintime,endtime,address,teacher_id,job_number','safe')
+            array('name,begintime,endtime,address,teacher_id,job_number,num,has_num','safe')
         );
     }
 

@@ -13,6 +13,8 @@ class CoursesForm extends CFormModel
     public $address;
     public $teacher_id;
     public $job_number;
+    public $num;
+    public $has_num;
 
 
 	/**
@@ -24,7 +26,7 @@ class CoursesForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('name,begintime,endtime,address,teacher_id,job_number', 'safe'),
+			array('name,begintime,endtime,address,teacher_id,job_number,num,has_num', 'safe'),
 		);
 	}
 
