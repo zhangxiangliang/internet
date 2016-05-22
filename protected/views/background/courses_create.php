@@ -93,6 +93,11 @@
                     <?php echo $form->error($model,'job_number'); ?>
                 </div>
                 <div>
+                    <?php echo $form->labelEx($model,'上课时间'); ?>
+                    <?php echo $form->textField($model,'time'); ?>
+                    <?php echo $form->error($model,'time'); ?>
+                </div>
+                <div>
                     <?php echo $form->labelEx($model,'限选人数'); ?>
                     <?php echo $form->textField($model,'num'); ?>
                     <?php echo $form->error($model,'num'); ?>

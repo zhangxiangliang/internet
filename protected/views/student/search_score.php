@@ -23,7 +23,7 @@
 				<ul>
                     <li><a href="/Student/SearchCourses/">我的课程</a></li>
                     <li><a href="/Student/PublicCoursesList/">选课</a></li>
-                    <li><a href="/Student/SearchTeacher/">教师查询</a></li>
+                    <!-- <li><a href="/Student/SearchTeacher/">教师查询</a></li> -->
                     <li><a href="/Student/SearchScore/" class="active">成绩查询</a></li>
                     <li><a href="/Student/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
@@ -48,7 +48,7 @@
 					</tr>
                     <?php foreach($courses as $val){ ?>
 					<tr>
-						<td><?php echo Courses::getNameById($val->courses_id); ?></td>
+						<td><a href="/Student/InfoCourse/id/<?php echo $val->courses_id ?>"><?php echo Courses::getNameById($val->courses_id); ?></a></td>
 						<td><?php echo Student::getNameById($val->student_id)?></td>
 						<td><?php echo $val->score === null? '尚未录入': $val->score ?></td>
                     </tr>

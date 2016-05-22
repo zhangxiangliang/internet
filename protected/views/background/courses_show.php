@@ -44,6 +44,7 @@
 				<table>
 					<tr>
 						<th>课程名</th>
+						<th>上课时间</th>
 						<th>开始时间</th>
 						<th>结束时间</th>
 						<th>上课地点</th>
@@ -59,6 +60,7 @@
                     ?>
 					<tr>
 						<td><?php echo $val->name; ?></td>
+						<td><?php echo $val->time; ?></td>
 						<td><?php echo $val->begintime; ?></td>
 						<td><?php echo $val->endtime; ?> </td>
 						<td><?php echo $val->address; ?></td>

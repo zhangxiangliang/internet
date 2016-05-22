@@ -42,8 +42,7 @@
 				<table>
 					<tr>
 						<th>课程名</th>
-						<th>开始时间</th>
-						<th>结束时间</th>
+						<th>上课时间</th>
 						<th>上课地点</th>
 						<th>任课教师</th>
                         <th>已选/限选人数</th>
@@ -56,9 +55,8 @@
                         }
                     ?>
 					<tr>
-						<td><?php echo $val->name; ?></td>
-						<td><?php echo $val->begintime; ?></td>
-						<td><?php echo $val->endtime; ?> </td>
+						<td><a href="/Teacher/InfoCourse/id/<?php echo $val->id; ?>"><?php echo $val->name; ?></a></td>
+						<td><?php echo $val->time; ?></td>
 						<td><?php echo $val->address; ?></td>
 						<td><a href="/teacher/InfoTeacher/id/<?php echo $val->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td><?php echo $val->has_num.'/'.$val->num ?></td>

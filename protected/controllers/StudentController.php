@@ -91,6 +91,24 @@ class StudentController extends CController{
         ));
     }
 
+    // 课程信息
+    public function actionInfoCourse() {
+        //后台验证权限
+        $this->beforeValidate();
+
+         //获取课程
+        $course_id = $_GET['id'];
+        $course = Courses::getModelById($course_id);
+
+        // 获取教师信息
+        $teacher = Teacher::model()->findByPk($course->teacher_id);
+
+        $this->render('course_info',array(
+            'course' => $course,
+            'teacher' => $teacher
+        ));
+    }
+
     public function actionStudentDelCourses(){
         //后台验证权限
         $this->beforeValidate();

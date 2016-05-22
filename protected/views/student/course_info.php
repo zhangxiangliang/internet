@@ -32,37 +32,43 @@
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
-                <?php $form=$this->beginWidget('CActiveForm', array( 'id'=>'login-form', 'enableClientValidation'=>true, 'clientOptions'=>array( 'validateOnSubmit'=>true, ), )); ?>
-                <div class="search">
-                    <?php echo $form->textField($model,'username',array('placeholder'=>'搜索教师名')); ?>
-                    <?php echo CHtml::submitButton( '搜索',$htmlOptions=array ('class'=>'btn blue')); ?>
-                </div>
-                <?php $this->endWidget(); ?>
-				<h3>在校老师</h3>
-				<?php if($teacher) { ?>
-				<table>
-					<tr>
-						<th>工号</th>
-						<th>教师名</th>
-					</tr>
-                    <?php foreach($teacher as $val){ ?>
-					<tr>
-						<td><?php echo $val->job_number;?></td>
-						<td><?php echo $val->username;?></td>
-					</tr>
-                    <?php }?>
+				<table >
+					<thead>
+						<tr>
+							<th colspan="3" style="text-align:left; font-weight:700; font-size: 15px; padding-left: 20px">课程信息</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>课程名</td>
+							<td><?php echo $course->name; ?></td>
+						</tr>
+						<tr>
+							<td>上课地点</td>
+							<td><?php echo $course->address; ?></td>
+						</tr>
+						<tr>
+							<td>上课时间</td>
+							<td><?php echo $course->time; ?></td>
+						</tr>
+						<tr>
+							<td>开始时间</td>
+							<td><?php echo $course->begintime; ?></td>
+						</tr>
+						<tr>
+							<td>结束时间</td>
+							<td><?php echo $course->endtime; ?></td>
+						</tr>
+						<tr>
+							<td>任课教师</td>
+							<td><a href="/Student/InfoTeacher/id/<?php echo $teacher->id ?>"><?php echo $teacher->username; ?></a></td>
+						</tr>
+						<tr>
+							<td>选课人数</td>
+							<td><?php echo $course->has_num . '/' . $course->num; ?></td>
+						</tr>
+					</tbody>
 				</table>
-                    <?php if(isset($teacher)){?>
-                        <div class="pages">
-                            <?php $this->widget('CLinkPager',array( 'header'=>'', 'prevPageLabel' => '上一页', 'nextPageLabel' => '下一页', 'firstPageLabel' => false, 'lastPageLabel' => false,'pages' => $pages, 'maxButtonCount'=>5, 'htmlOptions'=>array ('class'=>'pager') ) ); ?>
-                        </div>
-                    <?php }?>
-				<?php } else { ?>
-					<div class="message yellow">
-						<h3>暂无公开课程</h3>
-						<p>请联系老师或者管理员</p>
-					</div>
-				<?php } ?>
 			</div>
 		</div>
 	</div>

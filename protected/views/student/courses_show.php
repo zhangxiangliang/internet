@@ -23,7 +23,7 @@
 				<ul>
                     <li><a href="/Student/SearchCourses/" class="active">我的课程</a></li>
                     <li><a href="/Student/PublicCoursesList/">选课</a></li>
-                    <li><a href="/Student/SearchTeacher/">教师查询</a></li>
+                    <!-- <li><a href="/Student/SearchTeacher/">教师查询</a></li> -->
                     <li><a href="/Student/SearchScore/">成绩查询</a></li>
                     <li><a href="/Student/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
@@ -43,8 +43,7 @@
 				<table>
 					<tr>
 						<th>课程名</th>
-						<th>开始时间</th>
-						<th>结束时间</th>
+						<th>上课时间</th>
 						<th>上课地点</th>
 						<th>任课教师</th>
                         <th>操作</th>
@@ -57,11 +56,8 @@
                           }
                     ?>
 					<tr>
-						<td><?php echo $course->name; ?></td>
-						<td><?php echo $course->begintime; ?></td>
-
-						<td><?php echo $course->endtime; ?> </td>
-
+						<td><a href="/Student/InfoCourse/id/<?php echo $course->id ?>"><?php echo $course->name; ?></a></td>
+						<td><?php echo $course->time; ?></td>
 						<td><?php echo $course->address; ?></td>
 						<td><a href="/student/InfoTeacher/id/<?php echo $course->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td class="big-td">

@@ -314,8 +314,8 @@ body {
 	padding: 10px;
 	border: 1px solid #ccc;
 }
-.search a{
-	width: 10px;
+.search input[type=submit]{
+	width: 60px;
 	padding: 10px 20px;
 	color: #000;
 	background: #eee;
