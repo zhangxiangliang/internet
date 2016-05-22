@@ -32,15 +32,30 @@
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
-				<h3>查看教师<?php echo $teacher->username; ?></h3>
-				<table class="teacher table">
+				<table >
 					<thead>
 						<tr>
-							<th colspan="3">
-								教师信息
-							</th>
+							<th colspan="3">教师信息</th>
 						</tr>
 					</thead>
+					<tbody>
+						<tr>
+							<td>姓名</td>
+							<td><?php echo $teacher->username; ?></td>
+						</tr>
+						<tr>
+							<td>工号</td>
+							<td><?php echo $teacher->job_number; ?></td>
+						</tr>
+						<tr>
+							<td>个人简介</td>
+							<td>...</td>
+						</tr>
+						<tr>
+							<td>教授课程</td>
+							<td>...</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>
