@@ -67,6 +67,10 @@
 							<td>选课人数</td>
 							<td><?php echo $course->has_num . '/' . $course->num; ?></td>
 						</tr>
+						<tr>
+							<td>课程公告</td>
+							<td><?php echo $course->notice; ?></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

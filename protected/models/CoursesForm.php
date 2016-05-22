@@ -16,6 +16,7 @@ class CoursesForm extends CFormModel
     public $num;
     public $has_num;
     public $time;
+    public $notice;
 
 	/**
 	 * Declares the validation rules.
@@ -26,7 +27,7 @@ class CoursesForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('name,begintime,endtime,address,teacher_id,job_number,num,has_num,time', 'safe'),
+			array('name,begintime,endtime,address,teacher_id,job_number,num,has_num,time,notice', 'safe'),
 		);
 	}
 

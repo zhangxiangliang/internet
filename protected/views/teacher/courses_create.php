@@ -104,6 +104,11 @@
                     <?php echo $form->textField($model,'num'); ?>
                     <?php echo $form->error($model,'num'); ?>
                 </div>
+                <div>
+                    <?php echo $form->labelEx($model,'课程公告'); ?>
+                    <?php echo $form->textArea($model,'notice'); ?>
+                    <?php echo $form->error($model,'notice'); ?>
+                </div>
                 <div class="btns">
                     <?php echo CHtml::submitButton( '提交',$htmlOptions=array ('class'=>'btn blue')); ?>
                 </div>
