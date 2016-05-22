@@ -1,0 +1,110 @@
+/* 初始化 */
+* {
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* 背景 */
+body {
+	background: url(/images/3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 12px;
+}
+/* header 头部 */
+#header {
+    padding: 12px;
+    color: #999;
+    background: rgba(33,33,33,.5);
+	border-bottom: 2px solid rgba(33,33,33,.5);
+}
+#header h2 {
+	font-size: 1.2em;
+    color: #fff;
+}
+.body {
+	margin: 100px 10px 10px 10px;
+	width: 400px;
+	text-align: center;
+	background: rgba(0,0,0, .3);
+	border-radius: 10px;
+	overflow: auto;
+	padding: 20px;
+}
+/* 按钮 */
+.btn {
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+	padding: 10px 15px;
+	border: none;
+}
+.errorMessage {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	color: #9F3A38;
+	border: 1px solid #9F3A38;
+	background-color: #FFF6F6;
+}
+.btn.three{
+	width: 33%;
+}
+.btn.inline {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-left: 50px;
+	letter-spacing: 50px;
+    background: #f26202;
+}
+.btn.active {
+	border-bottom: 2px solid #f26202;
+}
+.btn.two {
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+}
+.btns {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.btns.inline {
+	width: 100%;
+}
+.btns.inline .btn {
+	display: inline-block;
+	margin-right: -4px;
+}
+.btn.right {
+	/*float: right;*/
+}
+/* 表单 */
+.form-group input {
+	width: 100%;
+	border: 1px solid rgba(34,36,38,.15);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+@media (max-width: 759px) {
+	.body {
+		margin: 100px 10px 10px 10px;
+		width: 350px;
+	}
+}
+@media (min-width: 1280px) {
+	.btn {
+		font-size: 15px;
+	}
+	#header h2 {
+		font-size: 1.4em;
+	    color: #fff;
+	}
+}

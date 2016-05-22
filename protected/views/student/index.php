@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="/css/internet-back.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<title>互联网+ 后台管理系统</title>
+</head>
+<body>
+	<div id="content">
+		<header id="header">
+			<div class="container">
+				<h1>互联网+</h1>
+				<h2>实践基地实训后台管理系统</h2>
+			</div>
+		</header>
+		<div class="container">
+			<a href="#nav" class="open toggle-btn">
+				<i class="fa fa-reorder"></i>
+			</a>
+			<nav id="nav">
+				<ul>
+					<li><a href="/Student/SearchCourses/">我的课程</a></li>
+                    <li><a href="/Student/PublicCoursesList/">选课</a></li>
+					<li><a href="/Student/SearchTeacher/">教师查询</a></li>
+					<li><a href="/Student/SearchScore/">成绩查询</a></li>
+					<li><a href="/Student/index/" class="active">个人信息</a></li>
+                    <li><a href="/site/logout/">退出</a></li>
+                    <a href="#top" class="close toggle-btn"><i class="fa fa-remove"></i></a>
+				</ul>
+			</nav>
+			<!-- 主体 -->
+			<div id="mainbody" class="clean">
+				<h3>基本信息</h3>
+				<div>
+					<ul>
+<!--						<li><img class="head-photo" src="/images/head.jpg" alt=""></li>-->
+						<li>名称：<?php echo $user->username; ?></li>
+<!--						<li>邮箱：123456@qq.com</li>-->
+<!--						<li>等级：管理员</li>-->
+					</ul>
+					<div class="btns">
+						<a href="/Student/ChangePassword" class="btn blue">修改密码</a>
+					</div>
+				</div>
+			</div>
+			<!-- 边栏 -->
+			<div id="sidebar" class="clean">
+<!--				<h3>管理功能</h3>-->
+<!--				<div class="btns">-->
+<!--					<a href="javascript:;" class="btn blue">学生导入</a>-->
+<!--				</div>-->
+<!--				<div class="btns">-->
+<!--					<a href="javascript:;" class="btn blue">批量密码重置</a>-->
+<!--				</div>-->
+			</div>
+		</div>
+	</div>
+	<footer id="footer" style="clear: both;">
+		<div class="container">
+			<h5>&copy; Copyright 互联网+ </h5>
+		</div>
+	</footer>
+</body>
+</html>
