@@ -8,8 +8,8 @@ return array(
     'connectionString' => 'mysql:host=127.0.0.1;dbname=internet',
     'emulatePrepare' => true,
     //设置数据库账号密码
-    'username' => 'internet',
-    'password' => 'internet',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 
 );

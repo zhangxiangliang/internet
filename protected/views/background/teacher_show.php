@@ -31,6 +31,12 @@
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
+                <?php $form=$this->beginWidget('CActiveForm', array( 'id'=>'login-form', 'enableClientValidation'=>true, 'clientOptions'=>array( 'validateOnSubmit'=>true, ), )); ?>
+                <div class="search">
+                    <?php echo $form->textField($model,'username',array('placeholder'=>'搜索教师姓名')); ?>
+                    <?php echo CHtml::submitButton( '搜索',$htmlOptions=array ('class'=>'btn blue')); ?>
+                </div>
+                <?php $this->endWidget(); ?>
                 <div class="btns">
                     <a href="/background/AddTeacherInfo" class="btn blue">新增教师</a>
                 </div>

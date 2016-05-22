@@ -66,6 +66,12 @@ class TeacherController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->compare('name',$_POST['CoursesForm']['name'],true);
+            }
+        }
         $teacher_id = Yii::app()->user->id;
         $criteria->join = 'JOIN `courses` ON `courses`.`id` = `t`.`courses_id`';
         $criteria->compare('courses.teacher_id',$teacher_id);
@@ -80,6 +86,7 @@ class TeacherController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -130,6 +137,12 @@ class TeacherController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->compare('name',$_POST['CoursesForm']['name'],true);
+            }
+        }
         $teacher_id = Yii::app()->user->id;
         $criteria->compare('teacher_id',$teacher_id);
         $count = Courses::model()->count($criteria);
@@ -142,6 +155,7 @@ class TeacherController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -219,6 +233,12 @@ class TeacherController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new StudentForm();
+        if(isset($_POST['StudentForm'])){
+            if(isset($_POST['StudentForm']['username'])){
+                $criteria->compare('username',$_POST['StudentForm']['username'],true);
+            }
+        }
         $count = Student::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
@@ -229,6 +249,7 @@ class TeacherController extends CController{
             'student'=>$student,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
 
     }

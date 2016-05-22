@@ -31,6 +31,12 @@
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
+                <?php $form=$this->beginWidget('CActiveForm', array( 'id'=>'login-form', 'enableClientValidation'=>true, 'clientOptions'=>array( 'validateOnSubmit'=>true, ), )); ?>
+                <div class="search">
+                    <?php echo $form->textField($model,'name',array('placeholder'=>'搜索课程')); ?>
+                    <?php echo CHtml::submitButton( '搜索',$htmlOptions=array ('class'=>'btn blue')); ?>
+                </div>
+                <?php $this->endWidget(); ?>
 				<h3>成绩录入</h3>
 				<?php if($courses) { ?>
 				<table>

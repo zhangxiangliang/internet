@@ -69,7 +69,14 @@ class StudentController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
-        $criteria->compare('student_id',$student_id);
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->join = 'JOIN `courses` as `c` on `c`.`id` = `t`.`courses_id`';
+                $criteria->compare('c.name',$_POST['CoursesForm']['name'],true);
+            }
+        }
+        $criteria->compare('t.student_id',$student_id);
         $count = StudentCourses::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
@@ -80,6 +87,7 @@ class StudentController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -116,7 +124,14 @@ class StudentController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
-        $criteria->addNotInCondition('id',$coursesArr);
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->compare('name',$_POST['CoursesForm']['name'],true);
+            }
+        }else{
+            $criteria->addNotInCondition('id',$coursesArr);
+        }
         $nowTime = Date('Y-m-d',time());
         $criteria->addCondition(" begintime >= '$nowTime'");
         $count = Courses::model()->count($criteria);
@@ -129,6 +144,7 @@ class StudentController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -156,25 +172,10 @@ class StudentController extends CController{
         Yii::app()->end();
     }
 
-    /*
-     * 查询教师信息
-     */
-    public function actionInfoTeacher() {
-        //后台验证权限
-        $this->beforeValidate();
 
-        // 获取教师信息
-        $teacher_id = $_GET['id'];
-        $teacher = Teacher::model()->find($teacher_id);
-
-        // 渲染
-        $this->render('teacher_info',array(
-            'teacher'=>$teacher,
-        ));
-    }
 
     /*
-     * 查询教师(该功能以废弃)
+     * 查询教师
      */
     public function actionSearchTeacher(){
         //后台验证权限
@@ -183,6 +184,12 @@ class StudentController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new TeacherForm();
+        if(isset($_POST['TeacherForm'])){
+            if(isset($_POST['TeacherForm']['username'])){
+                $criteria->compare('username',$_POST['TeacherForm']['username'],true);
+            }
+        }
         $count = Teacher::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
@@ -193,6 +200,7 @@ class StudentController extends CController{
             'teacher'=>$teacher,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -207,6 +215,13 @@ class StudentController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->join = 'JOIN `courses` as `c` on `c`.`id` = `t`.`courses_id`';
+                $criteria->compare('c.name',$_POST['CoursesForm']['name'],true);
+            }
+        }
         $student_id = Yii::app()->user->id;
         $criteria->compare('student_id',$student_id);
         $count = StudentCourses::model()->count($criteria);
@@ -219,6 +234,7 @@ class StudentController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 }

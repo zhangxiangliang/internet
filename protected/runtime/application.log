@@ -277,3 +277,161 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 HTTP_REFERER=http://internet.local/site/index
 ---
+2016/05/22 10:50:48 [error] [php] Undefined variable: model (F:\www\mstv\internet\protected\views\background\teacher_show.php:36)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(869): BackgroundController->renderFile()
+#1 F:\www\mstv\framework\web\CController.php(782): BackgroundController->renderPartial()
+#2 F:\www\mstv\internet\protected\controllers\BackgroundController.php(161): BackgroundController->render()
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): BackgroundController->actionTeacherInfo()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\www\mstv\framework\web\CController.php(286): BackgroundController->runAction()
+#6 F:\www\mstv\framework\web\CController.php(265): BackgroundController->runActionWithFilters()
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): BackgroundController->run()
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/background/TeacherInfo/
+in F:\www\mstv\internet\protected\views\background\teacher_show.php (36)
+in F:\www\mstv\internet\protected\controllers\BackgroundController.php (161)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 10:55:40 [error] [php] Undefined index: StudentForm (F:\www\mstv\internet\protected\controllers\BackgroundController.php:29)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(286): BackgroundController->runAction()
+#1 F:\www\mstv\framework\web\CController.php(265): BackgroundController->runActionWithFilters()
+#2 F:\www\mstv\framework\web\CWebApplication.php(282): BackgroundController->run()
+#3 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/background/CoursesList/
+in F:\www\mstv\internet\protected\controllers\BackgroundController.php (29)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 11:07:55 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `student_courses` `t` WHERE (name LIKE :ycp0) AND (student_id=:ycp1).
+in F:\www\mstv\internet\protected\controllers\StudentController.php (79)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 11:07:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `student_courses` `t` WHERE (name LIKE :ycp0) AND (student_id=:ycp1)' in F:\www\mstv\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\www\mstv\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\www\mstv\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 F:\www\mstv\internet\protected\controllers\StudentController.php(79): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): StudentController->actionSearchCourses()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\www\mstv\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\www\mstv\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): CController->run('SearchCourses')
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Student/SearchC...')
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Student/SearchCourses/
+HTTP_REFERER=http://internet.local/Student/SearchCourses/
+---
+2016/05/22 11:12:59 [error] [php] Undefined variable: model (F:\www\mstv\internet\protected\views\student\teacher_show.php:37)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(869): StudentController->renderFile()
+#1 F:\www\mstv\framework\web\CController.php(782): StudentController->renderPartial()
+#2 F:\www\mstv\internet\protected\controllers\StudentController.php(203): StudentController->render()
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): StudentController->actionSearchTeacher()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\www\mstv\framework\web\CController.php(286): StudentController->runAction()
+#6 F:\www\mstv\framework\web\CController.php(265): StudentController->runActionWithFilters()
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): StudentController->run()
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/Student/SearchTeacher/
+in F:\www\mstv\internet\protected\views\student\teacher_show.php (37)
+in F:\www\mstv\internet\protected\controllers\StudentController.php (203)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 11:13:08 [error] [php] Undefined variable: model (F:\www\mstv\internet\protected\controllers\StudentController.php:204)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(286): StudentController->runAction()
+#1 F:\www\mstv\framework\web\CController.php(265): StudentController->runActionWithFilters()
+#2 F:\www\mstv\framework\web\CWebApplication.php(282): StudentController->run()
+#3 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/Student/SearchTeacher/
+in F:\www\mstv\internet\protected\controllers\StudentController.php (204)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 11:16:19 [error] [php] Undefined variable: model (F:\www\mstv\internet\protected\views\student\search_score.php:4)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(869): StudentController->renderFile()
+#1 F:\www\mstv\framework\web\CController.php(782): StudentController->renderPartial()
+#2 F:\www\mstv\internet\protected\controllers\StudentController.php(237): StudentController->render()
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): StudentController->actionSearchScore()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\www\mstv\framework\web\CController.php(286): StudentController->runAction()
+#6 F:\www\mstv\framework\web\CController.php(265): StudentController->runActionWithFilters()
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): StudentController->run()
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/Student/SearchScore/
+in F:\www\mstv\internet\protected\views\student\search_score.php (4)
+in F:\www\mstv\internet\protected\controllers\StudentController.php (237)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 11:16:27 [error] [exception.CException] exception 'CException' with message '属性 "CoursesForm.username" 未被定义.' in F:\www\mstv\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\www\mstv\framework\web\helpers\CHtml.php(2728): CComponent->__get('username')
+#1 F:\www\mstv\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(CoursesForm), 'username')
+#2 F:\www\mstv\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(CoursesForm), 'username', Array)
+#3 F:\www\mstv\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(CoursesForm), 'username', Array)
+#4 F:\www\mstv\internet\protected\views\student\search_score.php(4): CActiveForm->textField(Object(CoursesForm), 'username', Array)
+#5 F:\www\mstv\framework\web\CBaseController.php(126): require('F:\\www\\mstv\\int...')
+#6 F:\www\mstv\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\www\\mstv\\int...', Array, true)
+#7 F:\www\mstv\framework\web\CController.php(869): CBaseController->renderFile('F:\\www\\mstv\\int...', Array, true)
+#8 F:\www\mstv\framework\web\CController.php(782): CController->renderPartial('search_score', Array, true)
+#9 F:\www\mstv\internet\protected\controllers\StudentController.php(238): CController->render('search_score', Array)
+#10 F:\www\mstv\framework\web\actions\CInlineAction.php(49): StudentController->actionSearchScore()
+#11 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 F:\www\mstv\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 F:\www\mstv\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\www\mstv\framework\web\CWebApplication.php(282): CController->run('SearchScore')
+#15 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Student/SearchS...')
+#16 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 F:\www\mstv\internet\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/Student/SearchScore/
+HTTP_REFERER=http://internet.local/Student/SearchScore/
+---
+2016/05/22 11:16:59 [error] [exception.CException] exception 'CException' with message '属性 "CoursesForm.username" 未被定义.' in F:\www\mstv\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\www\mstv\framework\web\helpers\CHtml.php(2728): CComponent->__get('username')
+#1 F:\www\mstv\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(CoursesForm), 'username')
+#2 F:\www\mstv\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(CoursesForm), 'username', Array)
+#3 F:\www\mstv\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(CoursesForm), 'username', Array)
+#4 F:\www\mstv\internet\protected\views\student\search_score.php(4): CActiveForm->textField(Object(CoursesForm), 'username', Array)
+#5 F:\www\mstv\framework\web\CBaseController.php(126): require('F:\\www\\mstv\\int...')
+#6 F:\www\mstv\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\www\\mstv\\int...', Array, true)
+#7 F:\www\mstv\framework\web\CController.php(869): CBaseController->renderFile('F:\\www\\mstv\\int...', Array, true)
+#8 F:\www\mstv\framework\web\CController.php(782): CController->renderPartial('search_score', Array, true)
+#9 F:\www\mstv\internet\protected\controllers\StudentController.php(238): CController->render('search_score', Array)
+#10 F:\www\mstv\framework\web\actions\CInlineAction.php(49): StudentController->actionSearchScore()
+#11 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 F:\www\mstv\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 F:\www\mstv\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\www\mstv\framework\web\CWebApplication.php(282): CController->run('SearchScore')
+#15 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Student/SearchS...')
+#16 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 F:\www\mstv\internet\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/Student/SearchScore/
+HTTP_REFERER=http://internet.local/Student/SearchScore/
+---
+2016/05/22 11:21:54 [error] [php] Undefined variable: model (F:\www\mstv\internet\protected\views\teacher\need_enter_score_list.php:36)
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(869): TeacherController->renderFile()
+#1 F:\www\mstv\framework\web\CController.php(782): TeacherController->renderPartial()
+#2 F:\www\mstv\internet\protected\controllers\TeacherController.php(89): TeacherController->render()
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): TeacherController->actionNeedEnterScoreList()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\www\mstv\framework\web\CController.php(286): TeacherController->runAction()
+#6 F:\www\mstv\framework\web\CController.php(265): TeacherController->runActionWithFilters()
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): TeacherController->run()
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/Teacher/NeedEnterScoreList
+in F:\www\mstv\internet\protected\views\teacher\need_enter_score_list.php (36)
+in F:\www\mstv\internet\protected\controllers\TeacherController.php (89)
+in F:\www\mstv\internet\index.php (13)

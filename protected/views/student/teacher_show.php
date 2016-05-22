@@ -23,7 +23,7 @@
 				<ul>
                     <li><a href="/Student/SearchCourses/">我的课程</a></li>
                     <li><a href="/Student/PublicCoursesList/">选课</a></li>
-                    <!-- <li><a href="/Student/SearchTeacher/" class="active">教师查询</a></li> -->
+                    <li><a href="/Student/SearchTeacher/" class="active">教师查询</a></li>
                     <li><a href="/Student/SearchScore/">成绩查询</a></li>
                     <li><a href="/Student/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
@@ -32,6 +32,12 @@
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
+                <?php $form=$this->beginWidget('CActiveForm', array( 'id'=>'login-form', 'enableClientValidation'=>true, 'clientOptions'=>array( 'validateOnSubmit'=>true, ), )); ?>
+                <div class="search">
+                    <?php echo $form->textField($model,'username',array('placeholder'=>'搜索教师名')); ?>
+                    <?php echo CHtml::submitButton( '搜索',$htmlOptions=array ('class'=>'btn blue')); ?>
+                </div>
+                <?php $this->endWidget(); ?>
 				<h3>在校老师</h3>
 				<?php if($teacher) { ?>
 				<table>
