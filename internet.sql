@@ -11,7 +11,7 @@
  Target Server Version : 100023
  File Encoding         : utf-8
 
- Date: 05/22/2016 17:05:21 PM
+ Date: 05/22/2016 21:32:08 PM
 */
 
 SET NAMES utf8;
@@ -48,14 +48,15 @@ CREATE TABLE `courses` (
   `teacher_id` int(11) NOT NULL,
   `num` int(11) NOT NULL DEFAULT '0' COMMENT '可选数量',
   `has_num` int(11) NOT NULL DEFAULT '0' COMMENT '已选人数',
+  `time` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `courses`
 -- ----------------------------
 BEGIN;
-INSERT INTO `courses` VALUES ('1', '课程呦', '2016-05-22', '2016-05-31', '博文楼', '1', '50', '2'), ('2', '人数测试', '2016-05-24', '2016-05-26', '阿萨德', '1', '50', '1');
+INSERT INTO `courses` VALUES ('1', '这个不是课程', '2016-05-22', '2016-05-31', '博文楼', '1', '50', '2', '星期二 上午 1 2 节'), ('2', '人数测试', '2016-05-24', '2016-05-26', '阿萨德', '1', '50', '1', '星期三 上午 1 2 节'), ('3', '双节棍', '2016-05-22', '2016-05-28', '精武馆', '2', '50', '0', '星期四 上午 1 2 节');
 COMMIT;
 
 -- ----------------------------
@@ -107,13 +108,13 @@ CREATE TABLE `teacher` (
   `job_number` int(11) NOT NULL,
   `introduction` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `teacher`
 -- ----------------------------
 BEGIN;
-INSERT INTO `teacher` VALUES ('1', 'teacher', 'e10adc3949ba59abbe56e057f20f883e', '1001', '拥有10年的互联网教育经验');
+INSERT INTO `teacher` VALUES ('1', 'teacher', 'e10adc3949ba59abbe56e057f20f883e', '1001', '无名教师'), ('2', '霍元甲', 'e10adc3949ba59abbe56e057f20f883e', '89757', '一代武林宗师，天下无敌手'), ('3', '迪迦奥特曼', 'e10adc3949ba59abbe56e057f20f883e', '89756', '奥特之星的守护者，为了人类而战');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
