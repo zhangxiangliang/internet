@@ -61,7 +61,7 @@
 						<td><?php echo $course->address; ?></td>
 						<td><a href="/student/InfoTeacher/id/<?php echo $course->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td class="big-td">
-                            <a href="/student/StudentDelCourses?id=<?php echo $course->id;?>" class="btn blue small">退选</a>
+                            <a href="/student/StudentDelCourses/courses_id/<?php echo $course->id;?>/sc_id/<?php echo $val->id;?>" class="btn blue small">退选</a>
                         </td>
                     </tr>
                     <?php }?>

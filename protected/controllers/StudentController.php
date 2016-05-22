@@ -112,8 +112,9 @@ class StudentController extends CController{
     public function actionStudentDelCourses(){
         //后台验证权限
         $this->beforeValidate();
-        $coursesId = $_GET['id'];//获取课程
-        $studentCourses = StudentCourses::model()->findByPk($coursesId);//选课关系
+        $scId = $_GET['sc_id'];//获取学生选课
+        $coursesId = $_GET['courses_id'];//获取课程
+        $studentCourses = StudentCourses::model()->findByPk($scId);//选课关系
         $courses = Courses::getModelById($coursesId);//课程
         $courses->has_num -= 1; //已选-1
         if(!$courses->save() || !$studentCourses->delete()){

@@ -102,7 +102,7 @@ class BackgroundController extends CController{
         $courses->has_num -= 1;
         $courses->save();
 
-        $this->render('success',array('message'=>'退选成功','url'=>'/Teacher/SearchCoursesStudent?id='.$coursesId));
+        $this->render('success',array('message'=>'退选成功','url'=>'/Background/SearchCoursesStudent?id='.$coursesId));
         Yii::app()->end();
 
     }
