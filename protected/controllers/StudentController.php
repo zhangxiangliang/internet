@@ -134,10 +134,25 @@ class StudentController extends CController{
         Yii::app()->end();
     }
 
+    /*
+     * 查询教师信息
+     */
+    public function actionInfoTeacher() {
+        //后台验证权限
+        $this->beforeValidate();
 
+        // 获取教师信息
+        $teacher_id = $_GET['id'];
+        $teacher = Teacher::model()->find($teacher_id);
+
+        // 渲染
+        $this->render('teacher_info',array(
+            'teacher'=>$teacher,
+        ));
+    }
 
     /*
-     * 查询教师
+     * 查询教师(该功能以废弃)
      */
     public function actionSearchTeacher(){
         //后台验证权限
