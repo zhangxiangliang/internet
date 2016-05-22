@@ -30,6 +30,12 @@
             </ul>
         </nav>
         <div id="mainbody" class="clean">
+            <?php $form=$this->beginWidget('CActiveForm', array( 'id'=>'login-form', 'enableClientValidation'=>true, 'clientOptions'=>array( 'validateOnSubmit'=>true, ), )); ?>
+            <div class="search">
+                <?php echo $form->textField($model,'username',array('placeholder'=>'搜索学生姓名')); ?>
+                <?php echo CHtml::submitButton( '搜索',$htmlOptions=array ('class'=>'btn blue')); ?>
+            </div>
+            <?php $this->endWidget(); ?>
             <h3>已选该课程的学生</h3>
             <?php if($student) { ?>
                 <table>
