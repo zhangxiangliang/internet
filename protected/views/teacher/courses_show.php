@@ -43,8 +43,8 @@
 					<tr>
 						<th>课程名</th>
 						<th>上课时间</th>
-						<th>上课地点</th>
-						<th>任课教师</th>
+						<th class="hidden">上课地点</th>
+						<th class="hidden">任课教师</th>
                         <th>已选/限选人数</th>
                         <th>操作</th>
 					</tr>
@@ -57,11 +57,12 @@
 					<tr>
 						<td><a href="/Teacher/InfoCourse/id/<?php echo $val->id; ?>"><?php echo $val->name; ?></a></td>
 						<td><?php echo $val->time; ?></td>
-						<td><?php echo $val->address; ?></td>
-						<td><a href="/teacher/InfoTeacher/id/<?php echo $val->teacher_id;?>"><?php echo $teacher; ?></a></td>
+						<td class="hidden"><?php echo $val->address; ?></td>
+						<td class="hidden"><a href="/teacher/InfoTeacher/id/<?php echo $val->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td><?php echo $val->has_num.'/'.$val->num ?></td>
                         <td class="big-td">
                             <a href="/teacher/SearchCoursesStudent?id=<?php echo $val->id;?>" class="btn blue small">查看已选学生</a>
+                            <a href="/teacher/UpdateCourses?id=<?php echo $val->id;?>" class="btn blue small">修改</a>
                         </td>
 					</tr>
                     <?php }?>

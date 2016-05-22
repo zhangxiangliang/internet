@@ -180,6 +180,31 @@ class TeacherController extends CController{
         ));
     }
 
+    // 更新课程
+    public function actionUpdateCourses(){
+        //后台验证权限
+        $this->beforeValidate();
+        //修改课程信息
+        $coursesId = $_GET['id'];
+        $model = Courses::model()->findByPk($coursesId);
+        $formModel = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            $model->setAttributes($_POST['CoursesForm']);
+            //赋值
+            $model->teacher_id = Teacher::getIdByJobNumber($_POST['CoursesForm']['job_number']);
+            if(!$model->update()){
+                $this->render('fail',array('message'=>'更新失败，请重试','url'=>'/teacher/SearchCourses'));
+                Yii::app()->end();
+            }
+            $this->render('success',array('message'=>'更新成功','url'=>'/teacher/SearchCourses'));
+            Yii::app()->end();
+        }
+        //获取旧数据
+        $formModel->setAttributes($model->getAttributes());
+        $formModel->job_number = Teacher::model()->findByPk($formModel->teacher_id)->job_number;
+        $this->render('courses_create',array('model'=>$formModel));
+    }
+
     // 课程信息
     public function actionInfoCourse() {
         //后台验证权限
