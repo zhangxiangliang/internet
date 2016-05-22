@@ -23,6 +23,12 @@ class BackgroundController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new CoursesForm();
+        if(isset($_POST['CoursesForm'])){
+            if(isset($_POST['CoursesForm']['name'])){
+                $criteria->compare('name',$_POST['CoursesForm']['name'],true);
+            }
+        }
         $count = Courses::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
@@ -33,6 +39,7 @@ class BackgroundController extends CController{
             'courses'=>$courses,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -106,20 +113,29 @@ class BackgroundController extends CController{
     public function actionStudentInfo(){
         //后台验证权限
         $this->beforeValidate();
+
         //每页数据量
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new StudentForm();
+        if(isset($_POST['StudentForm'])){
+            if(isset($_POST['StudentForm']['username'])){
+              $criteria->compare('username',$_POST['StudentForm']['username'],true);
+            }
+        }
         $count = Student::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
         $pager->applyLimit($criteria);
         $student = Student::model()->findAll($criteria);
 
+
         $this->render('student_show',array(
             'student'=>$student,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
     }
 
@@ -133,6 +149,12 @@ class BackgroundController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new TeacherForm();
+        if(isset($_POST['TeacherForm'])){
+            if(isset($_POST['TeacherForm']['username'])){
+                $criteria->compare('username',$_POST['TeacherForm']['username'],true);
+            }
+        }
         $count = Teacher::model()->count($criteria);
         $pager = new CPagination($count);
         $pager->pageSize = $pageSize;
@@ -143,6 +165,7 @@ class BackgroundController extends CController{
             'teacher'=>$teacher,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form,
         ));
     }
 
