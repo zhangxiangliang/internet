@@ -151,6 +151,10 @@ body {
 	color: #999;
 }
 /* 表单 */
+.form-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 .table {
 	text-align: left;
 	width: 600px;
@@ -251,17 +255,17 @@ body {
 	margin-bottom: 20px;
 }
 /* 消息 */
-.message {
+.message, .errorMessage{
 	margin: 20px auto;
-	width: 90%;
+	width: 100%;
 	padding: 10px 20px;
 	border-radius: 5px;
 }
-.message h3 {
+.message h3, .errorMessage{
 	margin-top: 0px;
 	margin-bottom: 8px;
 }
-.message.red {
+.message.red, .errorMessage{
 	color: #9F3A38;
 	border: 1px solid #9F3A38;
 	background-color: #FFF6F6;
