@@ -131,10 +131,10 @@ class TeacherController extends CController{
             $formModel->setAttributes($_POST['StudentCoursesForm']);
             $studentCourses->score = $formModel->score;
             if(!$studentCourses->save()){
-                $this->render('fail',array('message'=>'保存成绩失败，请重试','url'=>'/Teacher/NeedEnterScoreList'));
+                $this->render('fail',array('message'=>'保存成绩失败，请重试','url'=>'/Teacher/SearchCoursesStudent?id='.$studentCourses->courses_id));
                 Yii::app()->end();
             }
-            $this->render('success',array('message'=>'保存成绩成功','url'=>'/Teacher/NeedEnterScoreList'));
+            $this->render('success',array('message'=>'保存成绩成功','url'=>'/Teacher/SearchCoursesStudent?id='.$studentCourses->courses_id));
             Yii::app()->end();
 
         }

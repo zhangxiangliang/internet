@@ -23,7 +23,7 @@
 				<ul>
 					<li><a href="/Teacher/SearchStudent">学生查询</a></li>
                     <li><a href="/Teacher/SearchCourses/">我的课程</a></li>
-					<li><a href="/Teacher/NeedEnterScoreList">成绩录入</a></li>
+<!--					<li><a href="/Teacher/NeedEnterScoreList">成绩录入</a></li>-->
 					<li><a href="/Teacher/index/" class="active">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
                     <a href="#top" class="close toggle-btn"><i class="fa fa-remove"></i></a>
