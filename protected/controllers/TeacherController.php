@@ -241,6 +241,12 @@ class TeacherController extends CController{
         $pageSize = 10;
         //分页插件配置
         $criteria = new CDbCriteria();
+        $form = new StudentForm();
+        if(isset($_POST['StudentForm'])){
+            if(isset($_POST['StudentForm']['username'])){
+                $criteria->compare('username',$_POST['StudentForm']['username'],true);
+            }
+        }
         $criteria->addInCondition('id',$studentArr);
         $count = Student::model()->count($criteria);
         $pager = new CPagination($count);
@@ -253,6 +259,7 @@ class TeacherController extends CController{
             'coursesId'=>$coursesId,
             'pages'=>$pager,
             'count'=>$count,
+            'model'=>$form
         ));
 
     }
