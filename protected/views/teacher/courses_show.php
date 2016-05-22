@@ -54,7 +54,7 @@
 						<td><?php echo $val->begintime; ?></td>
 						<td><?php echo $val->endtime; ?> </td>
 						<td><?php echo $val->address; ?></td>
-						<td><?php echo $teacher ?></td>
+						<td><a href="/teacher/InfoTeacher/id/<?php echo $val->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td><?php echo $val->has_num.'/'.$val->num ?></td>
                         <td class="big-td">
                             <a href="/teacher/SearchCoursesStudent?id=<?php echo $val->id;?>" class="btn blue small">查看已选学生</a>

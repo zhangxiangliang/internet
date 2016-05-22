@@ -57,7 +57,7 @@
 						<td><?php echo $course->endtime; ?> </td>
 
 						<td><?php echo $course->address; ?></td>
-						<td><?php echo $teacher; ?></td>
+						<td><a href="/student/InfoTeacher/id/<?php echo $course->teacher_id;?>"><?php echo $teacher; ?></a></td>
                         <td class="big-td">
                             <a href="/student/StudentDelCourses?id=<?php echo $val->id;?>" class="btn blue small">退选</a>
                         </td>

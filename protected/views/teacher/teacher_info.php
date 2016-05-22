@@ -20,16 +20,15 @@
 				<i class="fa fa-reorder"></i>
 			</a>
 			<nav id="nav">
-				<ul>
-                    <li><a href="/Student/SearchCourses/">我的课程</a></li>
-                    <li><a href="/Student/PublicCoursesList/">选课</a></li>
-                    <!-- <li><a href="/Student/SearchTeacher/" class="active">教师查询</a></li> -->
-                    <li><a href="/Student/SearchScore/">成绩查询</a></li>
-                    <li><a href="/Student/index/">个人信息</a></li>
+                <ul>
+                    <li><a href="/Teacher/SearchStudent">学生查询</a></li>
+                    <li><a href="/Teacher/SearchCourses/">我的课程</a></li>
+                    <li><a href="/Teacher/NeedEnterScoreList">成绩录入</a></li>
+                    <li><a href="/Teacher/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
                     <a href="#top" class="close toggle-btn"><i class="fa fa-remove"></i></a>
-				</ul>
-			</nav>
+                </ul>
+            </nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
 				<table >

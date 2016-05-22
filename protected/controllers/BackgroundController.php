@@ -152,11 +152,15 @@ class BackgroundController extends CController{
         //更新教师信息
         $teacherId = $_GET['id'];
         $model = Teacher::model()->findByPk($teacherId);
+
         $formModel = new TeacherForm();
         if(isset($_POST['TeacherForm'])){
             $formModel->setAttributes($_POST['TeacherForm']);
             $model->username = $formModel->username;
             $model->job_number = $formModel->job_number;
+            $model->introduction = $formModel->introduction;
+            // var_dump($formModel->introduction);die();
+
             if(!empty($formModel->password)){
                 $model->password = md5($formModel->password);
             }
@@ -171,6 +175,7 @@ class BackgroundController extends CController{
         //获取旧数据
         $formModel->username = $model->username;
         $formModel->job_number = $model->job_number;
+        $formModel->introduction = $model->introduction;
         $this->render('teacher_create',array('model'=>$formModel));
     }
 
@@ -236,9 +241,9 @@ class BackgroundController extends CController{
         $this->beforeValidate();
         $formModel = new TeacherForm();
         if(isset($_POST['TeacherForm'])){
-           $model = new Teacher();
-           $model->setAttributes($_POST['TeacherForm']);
-            $model->password = md5($model->password);
+            $model = new Teacher();
+            $model->setAttributes($_POST['TeacherForm']);
+            $model->password = md5($model->password);  
             if(!$model->save()){
                 $this->render('fail',array('message'=>'新增失败，请重试','url'=>'/background/TeacherInfo'));
                 Yii::app()->end();

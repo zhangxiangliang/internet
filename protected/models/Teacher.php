@@ -4,6 +4,7 @@ class Teacher extends CActiveRecord
     public $username;
     public $password;
     public $job_number;
+    public $introduction;
 
     public function tableName()
     {
@@ -13,7 +14,7 @@ class Teacher extends CActiveRecord
     public function rules()
     {
         return array(
-            array('username,password,job_number', 'safe'),
+            array('username,password,job_number,introduction', 'safe'),
         );
     }
 

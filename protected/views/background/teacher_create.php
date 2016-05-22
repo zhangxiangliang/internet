@@ -27,8 +27,8 @@
             <!-- 导航 -->
             <nav id="nav">
                 <ul>
-                    <li><a href="/background/StudentInfo/" class="active">学生管理</a></li>
-                    <li><a href="/background/TeacherInfo/">教师管理</a></li>
+                    <li><a href="/background/StudentInfo/">学生管理</a></li>
+                    <li><a href="/background/TeacherInfo/" class="active">教师管理</a></li>
                     <li><a href="/background/CoursesList/">课程管理</a></li>
                     <li><a href="/background/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
@@ -48,6 +48,11 @@
                     <?php echo $form->labelEx($model,'工号'); ?>
                     <?php echo $form->textField($model,'job_number'); ?>
                     <?php echo $form->error($model,'job_number'); ?>
+                </div>
+                <div>
+                    <?php echo $form->labelEx($model,'个人简介'); ?>
+                    <?php echo $form->textArea($model,'introduction'); ?>
+                    <?php echo $form->error($model,'introduction'); ?>
                 </div>
                 <div>
                     <?php echo $form->labelEx($model,'密码'); ?>

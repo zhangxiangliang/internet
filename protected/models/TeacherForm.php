@@ -10,7 +10,7 @@ class TeacherForm extends CFormModel
 	public $username;
     public $password;
     public $job_number;
-
+    public $introduction;
 
 	/**
 	 * Declares the validation rules.
@@ -21,7 +21,7 @@ class TeacherForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username,password,job_number', 'safe'),
+			array('username,password,job_number,introduction', 'safe'),
 		);
 	}
 

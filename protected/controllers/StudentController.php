@@ -160,16 +160,22 @@ class StudentController extends CController{
      * 查询教师信息
      */
     public function actionInfoTeacher() {
-        //后台验证权限
+        // 权限验证
         $this->beforeValidate();
 
         // 获取教师信息
         $teacher_id = $_GET['id'];
-        $teacher = Teacher::model()->find($teacher_id);
+        $teacher = Teacher::model()->findByPk($teacher_id);
+
+        // 获取教师的课程信息
+        $criteria = new CDbCriteria();
+        $criteria->compare('teacher_id',$teacher_id);
+        $courses = Courses::model()->findAll($criteria);
 
         // 渲染
         $this->render('teacher_info',array(
-            'teacher'=>$teacher,
+            'teacher' => $teacher,
+            'courses' => $courses,
         ));
     }
 
