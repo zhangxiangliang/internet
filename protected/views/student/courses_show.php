@@ -23,7 +23,7 @@
 				<ul>
                     <li><a href="/Student/SearchCourses/" class="active">我的课程</a></li>
                     <li><a href="/Student/PublicCoursesList/">选课</a></li>
-                    <li><a href="/Student/SearchTeacher/">教师查询</a></li>
+                    <!-- <li><a href="/Student/SearchTeacher/">教师查询</a></li> -->
                     <li><a href="/Student/SearchScore/">成绩查询</a></li>
                     <li><a href="/Student/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>

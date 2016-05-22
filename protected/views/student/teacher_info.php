@@ -21,39 +21,27 @@
 			</a>
 			<nav id="nav">
 				<ul>
-					<li><a href="/Student/SearchCourses/">我的课程</a></li>
+                    <li><a href="/Student/SearchCourses/">我的课程</a></li>
                     <li><a href="/Student/PublicCoursesList/">选课</a></li>
-					<!-- <li><a href="/Student/SearchTeacher/">教师查询</a></li> -->
-					<li><a href="/Student/SearchScore/">成绩查询</a></li>
-					<li><a href="/Student/index/" class="active">个人信息</a></li>
+                    <!-- <li><a href="/Student/SearchTeacher/" class="active">教师查询</a></li> -->
+                    <li><a href="/Student/SearchScore/">成绩查询</a></li>
+                    <li><a href="/Student/index/">个人信息</a></li>
                     <li><a href="/site/logout/">退出</a></li>
                     <a href="#top" class="close toggle-btn"><i class="fa fa-remove"></i></a>
 				</ul>
 			</nav>
 			<!-- 主体 -->
 			<div id="mainbody" class="clean">
-				<h3>基本信息</h3>
-				<div>
-					<ul>
-<!--						<li><img class="head-photo" src="/images/head.jpg" alt=""></li>-->
-						<li>名称：<?php echo $user->username; ?></li>
-<!--						<li>邮箱：123456@qq.com</li>-->
-<!--						<li>等级：管理员</li>-->
-					</ul>
-					<div class="btns">
-						<a href="/Student/ChangePassword" class="btn blue">修改密码</a>
-					</div>
-				</div>
-			</div>
-			<!-- 边栏 -->
-			<div id="sidebar" class="clean">
-<!--				<h3>管理功能</h3>-->
-<!--				<div class="btns">-->
-<!--					<a href="javascript:;" class="btn blue">学生导入</a>-->
-<!--				</div>-->
-<!--				<div class="btns">-->
-<!--					<a href="javascript:;" class="btn blue">批量密码重置</a>-->
-<!--				</div>-->
+				<h3>查看教师<?php echo $teacher->username; ?></h3>
+				<table class="teacher table">
+					<thead>
+						<tr>
+							<th colspan="3">
+								教师信息
+							</th>
+						</tr>
+					</thead>
+				</table>
 			</div>
 		</div>
 	</div>
