@@ -83,6 +83,21 @@ class StudentController extends CController{
         ));
     }
 
+    public function actionStudentDelCourses(){
+        //后台验证权限
+        $this->beforeValidate();
+        $coursesId = $_GET['id'];//获取课程
+        $studentCourses = StudentCourses::model()->findByPk($coursesId);//选课关系
+        $courses = Courses::getModelById($coursesId);//课程
+        $courses->has_num -= 1; //已选-1
+        if(!$courses->save() || !$studentCourses->delete()){
+            $this->render('fail',array('message'=>'抱歉！退选失败，请重试','url'=>'/Student/searchCourses'));
+            Yii::app()->end();
+        }
+        $this->render('success',array('message'=>'退选课程成功！','url'=>'/Student/searchCourses'));
+        Yii::app()->end();
+    }
+
     public function actionPublicCoursesList(){
         //后台验证权限
         $this->beforeValidate();
@@ -123,6 +138,11 @@ class StudentController extends CController{
         //选择的课程信息
         $coursesId = $_GET['id'];
         $studentId = Yii::app()->user->id;
+        $coureses = Courses::getModelById($coursesId);
+        if($coureses->has_num>=$coureses->num){
+            $this->render('fail',array('message'=>'该课程已无名额，请选择其他课程','url'=>'/Student/PublicCoursesList'));
+            Yii::app()->end();
+        }
         $model = new StudentCourses();
         $model->courses_id = $coursesId;
         $model->student_id = $studentId;
@@ -130,6 +150,8 @@ class StudentController extends CController{
             $this->render('fail',array('message'=>'选课失败，请重试','url'=>'/Student/PublicCoursesList'));
             Yii::app()->end();
         }
+        $coureses->has_num += 1; //已选+1
+        $coureses->save();
         $this->render('success',array('message'=>'选课成功!','url'=>'/Student/PublicCoursesList'));
         Yii::app()->end();
     }

@@ -59,6 +59,7 @@
 						<td><?php echo $teacher ?></td>
                         <td><?php echo $val->has_num.'/'.$val->num ?></td>
 						<td class="big-td">
+                            <a href="/background/SearchCoursesStudent?id=<?php echo $val->id;?>" class="btn blue small">查看学生</a>
 							<a href="/background/UpdateCourses?id=<?php echo $val->id;?>" class="btn blue small">修改</a>
                             <a href="/background/DelCourses?id=<?php echo $val->id;?>" class="btn red small">删除</a>
 						</td>

@@ -40,6 +40,8 @@
 						<th>结束时间</th>
 						<th>上课地点</th>
 						<th>任课教师</th>
+                        <th>已选/限选人数</th>
+                        <th>操作</th>
 					</tr>
                     <?php foreach($courses as $val){
                     	$teacher = Teacher::getNameById($val->teacher_id);
@@ -53,6 +55,10 @@
 						<td><?php echo $val->endtime; ?> </td>
 						<td><?php echo $val->address; ?></td>
 						<td><?php echo $teacher ?></td>
+                        <td><?php echo $val->has_num.'/'.$val->num ?></td>
+                        <td class="big-td">
+                            <a href="/teacher/SearchCoursesStudent?id=<?php echo $val->id;?>" class="btn blue small">查看已选学生</a>
+                        </td>
 					</tr>
                     <?php }?>
 				</table>

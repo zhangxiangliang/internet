@@ -41,6 +41,7 @@
 						<th>结束时间</th>
 						<th>上课地点</th>
 						<th>任课教师</th>
+                        <th>操作</th>
 					</tr>
                     <?php foreach($courses as $val){
                           $course = Courses::getModelById($val->courses_id);
@@ -57,6 +58,9 @@
 
 						<td><?php echo $course->address; ?></td>
 						<td><?php echo $teacher; ?></td>
+                        <td class="big-td">
+                            <a href="/student/StudentDelCourses?id=<?php echo $val->id;?>" class="btn blue small">退选</a>
+                        </td>
                     </tr>
                     <?php }?>
 				</table>

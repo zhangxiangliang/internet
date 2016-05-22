@@ -35,7 +35,7 @@
         <?php $this->endWidget(); ?>      
         <?php }else{ ?>
             <div class="btns">
-                <a href="/<?php echo Yii::app()->user->level;?>/index" class="btn blue two">进入后台</a>
+                <a href="/<?php echo Yii::app()->user->level == 'Admin' ? 'Background' : Yii::app()->user->level ;?>/index" class="btn blue two">进入后台</a>
                 <a href="/site/logout" class="btn two">退出</a>
             </div>
         <?php } ?>

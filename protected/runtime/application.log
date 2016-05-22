@@ -189,3 +189,91 @@ in F:\www\mstv\internet\index.php (13)
 2016/05/22 08:41:32 [warning] [application] Failed to set unsafe attribute "id" of "CoursesForm".
 in F:\www\mstv\internet\protected\controllers\BackgroundController.php (294)
 in F:\www\mstv\internet\index.php (13)
+2016/05/22 09:21:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "SearchCoursesStudent" 动作.' in F:\www\mstv\framework\web\CController.php:483
+Stack trace:
+#0 F:\www\mstv\framework\web\CController.php(270): CController->missingAction('SearchCoursesSt...')
+#1 F:\www\mstv\framework\web\CWebApplication.php(282): CController->run('SearchCoursesSt...')
+#2 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('student/SearchC...')
+#3 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\www\mstv\internet\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/student/SearchCoursesStudent?id=1
+HTTP_REFERER=http://internet.local/Teacher/SearchCourses/
+---
+2016/05/22 09:26:14 [error] [exception.CException] exception 'CException' with message 'CDbCriteria and its behaviors do not have a method or closure named "select".' in F:\www\mstv\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\www\mstv\internet\protected\controllers\TeacherController.php(155): CComponent->__call('select', Array)
+#1 F:\www\mstv\internet\protected\controllers\TeacherController.php(155): CDbCriteria->select('student_id')
+#2 F:\www\mstv\framework\web\actions\CInlineAction.php(49): TeacherController->actionSearchCoursesStudent()
+#3 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\www\mstv\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\www\mstv\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\www\mstv\framework\web\CWebApplication.php(282): CController->run('SearchCoursesSt...')
+#7 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('teacher/SearchC...')
+#8 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 F:\www\mstv\internet\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/teacher/SearchCoursesStudent?id=1
+HTTP_REFERER=http://internet.local/Teacher/SearchCourses/
+---
+2016/05/22 09:26:30 [error] [php] Object of class StudentCourses could not be converted to string (F:\www\mstv\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 F:\www\mstv\framework\db\schema\CDbCommandBuilder.php(177): CMysqlCommandBuilder->bindValues()
+#1 F:\www\mstv\framework\db\ar\CActiveRecord.php(1606): CMysqlCommandBuilder->createCountCommand()
+#2 F:\www\mstv\internet\protected\controllers\TeacherController.php(166): Student->count()
+#3 F:\www\mstv\framework\web\actions\CInlineAction.php(49): TeacherController->actionSearchCoursesStudent()
+#4 F:\www\mstv\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\www\mstv\framework\web\CController.php(286): TeacherController->runAction()
+#6 F:\www\mstv\framework\web\CController.php(265): TeacherController->runActionWithFilters()
+#7 F:\www\mstv\framework\web\CWebApplication.php(282): TeacherController->run()
+#8 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\www\mstv\internet\index.php(13): CWebApplication->run()
+REQUEST_URI=/teacher/SearchCoursesStudent?id=1
+in F:\www\mstv\internet\protected\controllers\TeacherController.php (166)
+in F:\www\mstv\internet\index.php (13)
+2016/05/22 09:55:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Admin/index"。' in F:\www\mstv\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Admin/index')
+#1 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 F:\www\mstv\internet\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Admin/index
+HTTP_REFERER=http://internet.local/site/index
+---
+2016/05/22 09:55:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Admin/index"。' in F:\www\mstv\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Admin/index')
+#1 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 F:\www\mstv\internet\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Admin/index
+HTTP_REFERER=http://internet.local/site/index
+---
+2016/05/22 09:58:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "Admin/index"。' in F:\www\mstv\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('Admin/index')
+#1 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 F:\www\mstv\internet\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Admin/index
+HTTP_REFERER=http://internet.local/site/index
+---
+2016/05/22 09:59:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in F:\www\mstv\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 F:\www\mstv\internet\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://internet.local/site/index
+---
+2016/05/22 09:59:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in F:\www\mstv\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\www\mstv\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 F:\www\mstv\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 F:\www\mstv\internet\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://internet.local/site/index
+---

@@ -36,6 +36,70 @@ class BackgroundController extends CController{
         ));
     }
 
+    /**
+     * 查询某个课程的学生
+     */
+    public function actionSearchCoursesStudent(){
+        //后台验证权限
+        $this->beforeValidate();
+        $coursesId  = $_GET['id']; //获取课程id
+        $cri = new CDbCriteria();
+        $cri->compare('courses_id',$coursesId);
+        $model = StudentCourses::model()->findAll($cri);
+        $studentArr = array();
+        foreach($model as $key => $val){
+            $studentArr[] = $val->student_id;
+        }
+        //每页数据量
+        $pageSize = 10;
+        //分页插件配置
+        $criteria = new CDbCriteria();
+        $criteria->addInCondition('id',$studentArr);
+        $count = Student::model()->count($criteria);
+        $pager = new CPagination($count);
+        $pager->pageSize = $pageSize;
+        $pager->applyLimit($criteria);
+        $student = Student::model()->findAll($criteria);
+
+        $this->render('student',array(
+            'student'=>$student,
+            'coursesId'=>$coursesId,
+            'pages'=>$pager,
+            'count'=>$count,
+        ));
+
+    }
+
+    /**
+     * 管理员退选学生
+     */
+    public function actionDeleteStudent(){
+        //后台验证权限
+        $this->beforeValidate();
+        $studentId = $_GET['student_id'];
+        $coursesId = $_GET['courses_id'];
+        $cri = new CDbCriteria();
+        $cri->compare('t.courses_id',$coursesId);
+        $cri->join = "Join `student` as `s` on `s`.`student_id` = $studentId ";
+        $cri->addCondition('t.student_id = s.id');
+        $model = StudentCourses::model()->find($cri);
+        if(empty($model)){
+            $this->render('fail',array('message'=>'退选失败,请重试','url'=>'/Background/SearchCoursesStudent?id='.$coursesId));
+            Yii::app()->end();
+        }
+        if(!$model->delete()){
+            $this->render('fail',array('message'=>'退选失败,请重试','url'=>'/Background/SearchCoursesStudent?id='.$coursesId));
+            Yii::app()->end();
+        }
+        $courses = Courses::getModelById($coursesId);
+        $courses->has_num -= 1;
+        $courses->save();
+
+        $this->render('success',array('message'=>'退选成功','url'=>'/Teacher/SearchCoursesStudent?id='.$coursesId));
+        Yii::app()->end();
+
+    }
+
     /*
      * 学生信息
      */
