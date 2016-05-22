@@ -11,7 +11,7 @@
  Target Server Version : 100023
  File Encoding         : utf-8
 
- Date: 05/22/2016 21:41:39 PM
+ Date: 05/23/2016 00:19:20 AM
 */
 
 SET NAMES utf8;
@@ -48,7 +48,8 @@ CREATE TABLE `courses` (
   `teacher_id` int(11) NOT NULL,
   `num` int(11) NOT NULL DEFAULT '0' COMMENT '可选数量',
   `has_num` int(11) NOT NULL DEFAULT '0' COMMENT '已选人数',
-  `time` text NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `notice` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -56,7 +57,7 @@ CREATE TABLE `courses` (
 --  Records of `courses`
 -- ----------------------------
 BEGIN;
-INSERT INTO `courses` VALUES ('1', '这个不是课程', '2016-05-22', '2016-05-31', '博文楼', '1', '50', '2', '星期二 上午 1 2 节'), ('2', '人数测试', '2016-05-24', '2016-05-26', '阿萨德', '1', '50', '1', '星期三 上午 1 2 节'), ('3', '双节棍', '2016-05-22', '2016-05-28', '精武馆', '2', '50', '0', '星期四 上午 1 2 节');
+INSERT INTO `courses` VALUES ('1', '这个不是课程', '2016-05-22', '2016-05-31', '博文楼', '1', '50', '1', '星期二 上午 1 2 节', '这周不上课，骗你的，改成星期三上课。'), ('2', '人数测试', '2016-05-24', '2016-05-26', '阿萨德', '1', '50', '1', '星期三 上午 1 2 节', '这周交报告1'), ('3', '双节棍', '2016-05-22', '2016-05-28', '精武馆', '2', '50', '1', '星期四 上午 1 2 节', '记得带双节棍');
 COMMIT;
 
 -- ----------------------------
@@ -75,7 +76,7 @@ CREATE TABLE `student` (
 --  Records of `student`
 -- ----------------------------
 BEGIN;
-INSERT INTO `student` VALUES ('1', 'student', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('2', 'student1', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('3', 'student2', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('4', 'student3', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('5', 'student4', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('6', 'student5', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('7', 'student6', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('8', 'student7', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('9', 'student8', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('10', 'student9', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('11', 'student10', 'e10adc3949ba59abbe56e057f20f883e', '1001');
+INSERT INTO `student` VALUES ('1', 'student', 'e10adc3949ba59abbe56e057f20f883e', '1001'), ('2', 'student1', 'e10adc3949ba59abbe56e057f20f883e', '1002'), ('3', 'student2', 'e10adc3949ba59abbe56e057f20f883e', '1003');
 COMMIT;
 
 -- ----------------------------
@@ -88,13 +89,13 @@ CREATE TABLE `student_courses` (
   `student_id` int(11) NOT NULL,
   `score` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `student_courses`
 -- ----------------------------
 BEGIN;
-INSERT INTO `student_courses` VALUES ('6', '2', '1', null), ('7', '1', '3', null), ('8', '1', '3', null);
+INSERT INTO `student_courses` VALUES ('7', '1', '3', null), ('8', '1', '3', null), ('15', '2', '1', null), ('16', '3', '1', null);
 COMMIT;
 
 -- ----------------------------
